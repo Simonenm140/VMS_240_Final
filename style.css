@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=League+Spartan:wght@400;500&family=Unbounded:wght@500;700&display=swap');
 
-/* ask how to make spacing the same for p and p2, how to add spacing btwen h2 and p1 + p2., how to make opening page take up whole phone screen, fix header to remain evenly spaced, how to add text below container, how to move hamburger icon to right how to upload to github, h/ 
 
-/*create background, ask if i put the flex sizing here? */
+/*create background */
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -29,9 +28,10 @@ body {
 /*make div with two columns, one that takes up 60% of screen and one that takes up 40% */
 .container {
     display: flex;
-    margin: 1vw;
+    margin: 2vw;
     /*z-index: 2;*/
     max-width: 100%;
+    clear:both;
   }
   
   .column {
@@ -41,7 +41,6 @@ body {
   }
   
   .column-60 {
-
     width: 60%;
   }
   
@@ -52,41 +51,51 @@ body {
 /* additional container */
 
 .full-width-container {
+  display: flex;
   width: 100%;
   background-color: transparent;
   padding: 20px;
   box-sizing: border-box;
   /* Ensure it starts beneath the current content */
   clear: both;
+  display: block;
 }
 
 /* footer styling */
-
 .site-footer {
-  padding: 0px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
 .footer-content {
+  width: 100%;
+  max-width: 100%; /* Ensure content doesn't exceed the full width */
   display: flex;
-  justify-content: space-around; /* Adjust as needed */
+  justify-content: center;
   align-items: center;
+
 }
 
-.footer ul{
+.footer ul {
   list-style-type: none;
-  margin: 0;
   padding: 0;
   display: flex;
   justify-content: space-between;
-  }
-  
+
+}
+
 .footer li {
-    display: inline;
-  }
+  display: inline-flex;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-bottom: 2vw;
 
-
-/* image styling */
+}
 
 /*logo styling */
 
@@ -96,16 +105,23 @@ body {
 }
 
 .band-image {
-  width: 100%;
+  width: 100vw;
+  height: auto;
+  position: relative;
+}
+
+.band-image2 {
   height: auto;
   position: relative;
 }
 
 .band-image img {
-  width: 100%; /* Ensure the image takes up the full width */
-  height: 80vh; /* Maintain aspect ratio */
+  width: 100vw; /* Ensure the image takes up the full width */
+  height: auto;
   display: block; /* Remove default inline display */
 }
+
+/* image styling */
 
 .image-text {
   position: absolute;
@@ -115,7 +131,46 @@ body {
   text-align: center;
   font-family: 'Unbounded', bold;
   font-size: 8.5vw;
-  color: #D87541; /* Text color */
+  /*color: #D87541;Text color */
+  color: #27B263;
+  background-color: transparent; /* Set the background to transparent */
+  white-space: nowrap; 
+}
+
+.oc-image-text { /*for image over text that starts off center */
+  position: absolute;
+  top: 3%; /* just below starting horizontal line*/
+  left: 72%; /* to the right of image*/
+  transform: translate(-50%, -50%); /* Center the text exactly */
+  text-align: center;
+  font-family: 'League Spartan';
+  font-weight: bold;
+  font-size: 3vw;
+  line-height: 1.2;
+  color: #A0D11C;
+  margin-top: 1vw;
+  margin-right: 1vw;
+  margin-bottom: 1vw;
+  text-align: left;
+  background-color: transparent; /* Set the background to transparent */
+  white-space: nowrap; 
+}
+
+.oc-image-body-text { /*for image over text that starts off center */
+  position: absolute;
+  top: 6%; /* just below starting horizontal line*/
+  left: 72%; /* to the right of image*/
+  transform: translate(-50%, -50%); /* Center the text exactly */
+  text-align: center;
+  font-family: 'League Spartan';
+  font-weight: bold;
+  font-size: 3vw;
+  line-height: 1.2;
+  color: #A0D11C;
+  margin-top: 1vw;
+  margin-right: 1vw;
+  margin-bottom: 1vw;
+  text-align: left;
   background-color: transparent; /* Set the background to transparent */
   white-space: nowrap; 
 }
@@ -162,6 +217,16 @@ body {
   align-items: center;
 }
 
+.img4{
+  align-items: left;
+  width : 60%;
+  display : block
+}
+
+.img5{
+  align-items: right;
+}
+
 /*styling for home page container images, bound to the width of each container */
 .container img {
   max-width: 100%; /* Set the maximum width of the image to 100% of its container */
@@ -170,9 +235,6 @@ body {
   margin: 0 auto; /* Center the images horizontally within the column */
   padding: 3vw;
 }
-
-
-/*z index and research css naimations mozila */
 
 /*text formatting */
 h1 {
@@ -202,7 +264,8 @@ h3{
   font-weight: bold;
   font-size: 4vw;
   line-height: normal;
-  color: #D87541;
+  color: #27B263;
+  /* color: #D87541; */
   margin-top: 1vw;
   margin-right: 1vw;
   margin-bottom: 1vw;
@@ -220,7 +283,6 @@ p{
     text-align: start;
 }
 
-/*why does this text expand when on smaller display? */
 p2{
   font-family: 'League Spartan';
   font-weight: bold;
@@ -228,6 +290,7 @@ p2{
   line-height: +1.5;
   color: #008037;
   text-align: left;
+
 }
 
 p3{
@@ -237,6 +300,10 @@ p3{
   line-height: +1.5;
   color:#A0D11C;
   text-align: left;
+}
+
+a {
+  color: #27B263;
 }
 
 /*bullet styling */
@@ -260,6 +327,89 @@ p3{
 
 .bullet-list a :visited {
   color: #D87541
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow animations */
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
 
 /* make nav bar  that always fits length of screen*/
@@ -337,6 +487,10 @@ a:hover {
       font-size: 3vw;
     }
 
+    p3{
+      font-size: 3vw;
+    }
+
     .web-menu{
       display: none;
     }
@@ -358,16 +512,25 @@ a:hover {
       color: #D87541;
     }
 
-  .header {
-    width: 100%;
-    height: auto;
-    position: relative;
-    top: 0;
-    z-index: 1000;
-    background-color: #391C07;
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px; /* Adjust padding as needed */
-  }
+    .header {
+      width: 100%;
+      height: auto;
+      position: relative;
+      top: 0;
+      z-index: 1000;
+      background-color: #391C07;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end; /* Align content to the right */
+      padding: 10px; /* Adjust padding as needed */
+    }
+
+    .header a :visited {
+      color:  #008037;
+    }
+
+    .header a {
+      color: #D87541
+    }
 
   }
